@@ -11,13 +11,7 @@ namespace Completed
 	/// </summary>
 	public class Player : MovingObject
 	{
-
 		public float restartLevelDelay = 1f;		//Delay time in seconds to restart level.
-		/// <summary>
-		/// TODO: 음식과 소다는 Item이라는 클래스로 따로 뺀다.
-		/// </summary>
-		public int pointsPerFood = 10;				//Number of points to add to player food points when picking up a food object.
-		public int pointsPerSoda = 20;				//Number of points to add to player food points when picking up a soda object.
 		public int wallDamage = 1;					//How much damage a player does to a wall when chopping it.
 		public Text foodText;						//UI Text to display current player food total.
 		public AudioClip moveSound1;				//1 of 2 Audio clips to play when player moves.
@@ -196,10 +190,10 @@ namespace Completed
 			else if(other.tag == "Food")
 			{
 				//Add pointsPerFood to the players current food total.
-				food += pointsPerFood;
+				food += Food.pointsPerFood;
 				
 				//Update foodText to represent current total and notify player that they gained points
-				foodText.text = "+" + pointsPerFood + " Food: " + food;
+				foodText.text = "+" + Food.pointsPerFood + " Food: " + food;
 				
 				//Call the RandomizeSfx function of SoundManager and pass in two eating sounds to choose between to play the eating sound effect.
 				SoundManager.instance.RandomizeSfx (eatSound1, eatSound2);
@@ -212,10 +206,10 @@ namespace Completed
 			else if(other.tag == "Soda")
 			{
 				//Add pointsPerSoda to players food points total
-				food += pointsPerSoda;
+				food += Soda.pointsPerSoda;
 				
 				//Update foodText to represent current total and notify player that they gained points
-				foodText.text = "+" + pointsPerSoda + " Food: " + food;
+				foodText.text = "+" + Soda.pointsPerSoda + " Food: " + food;
 				
 				//Call the RandomizeSfx function of SoundManager and pass in two drinking sounds to choose between to play the drinking sound effect.
 				SoundManager.instance.RandomizeSfx (drinkSound1, drinkSound2);
