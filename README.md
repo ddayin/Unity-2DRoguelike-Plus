@@ -1,5 +1,5 @@
 # Unity-2DRoguelike-Plus
-Unity에서 공식적으로 제공하는 2D Roguelike라는 에셋을 이용하여 소스코드 개선, 기능 추가 등을 합니다.
+This is an upgraded version of project based on Unity's official tutorial named 2D Roguelike.
 
 아래 링크의 유니티 공식 투토리얼 프로젝트를 개선해 보겠습니다.
 https://learn.unity.com/project/2d-roguelike-tutorial
